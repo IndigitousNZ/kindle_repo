@@ -1,0 +1,27 @@
+<div class="container">
+	<h3> Sign up </h3>
+	<form method="post" action="/users/signup">
+		<div class="signup">
+			<div>
+				{{#if taken}}
+				<h5 style="color: red;">Email is already registered, please log in!</h5>
+				{{else}}
+				<h5>Join the fun, sign up now!</h5>
+				{{/if}}
+			</div><br>
+			<label>First name</label><br>
+			<input type="text" class="form-control" name="firstname" id="firstname" required><br>
+			<label>Last name</label>
+			<br>
+			<input type="text" class="form-control" name="lastname" id="lastname">	
+			<br>
+			<label>Email</label>
+			<input type="email" class="form-control" name="email" id="email" required>
+			<br>
+			<label>Password</label>
+			<sub> (Hey there! Make it at least 8 characters <- like numbers, characters, letters = semi hacker free) </sub><br>
+			<input type="password" pattern=".{8,}" class="form-control" name="password" id="password" required>
+		</div><br>
+		<button type="submit" id="signupbtn" class="btn btn-default"> Submit</button>
+	</form>
+</div>

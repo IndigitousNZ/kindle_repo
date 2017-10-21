@@ -1,0 +1,51 @@
+<div class="container_style" style="padding-left: 150px;">
+	<br><h4> Upload Product </h4>
+	<br>
+	<form method="post" action="/products/adminUploadProduct" 
+		  enctype="multipart/form-data" style="padding-bottom: 40px;">
+		<div class="form-group">
+			
+			<label>Product Name</label><br>
+			<input type="text" name="productName" id="productName" required><br>
+
+			<label>Category</label><br>
+			<select name="category">
+				<option value="Tech">Tech</option>
+				<option value="Fantasy ">Fantasy</option>
+				<option value="Pokemon">Pokemon</option>
+			</select><br>
+			
+			<label>Gender</label><br>
+			<select name="gender" id="gender" required>
+				<option value="Male">Male</option>
+				<option value="Female">Female</option>
+				<option value="Everyone">Everyone</option>
+			</select><br>
+
+			<label>Size</label><br>
+			<select name="size" id="size" required>
+				<option value="xs">XS</option>
+				<option value="s">S</option>
+				<option value="m">M</option>
+				<option value="l">L</option>
+				<option value="xl">XL</option>
+			</select><br>
+			
+			<label>Price</label><br>
+			<input type="number" name="price" id="price" required><br>
+			
+			<label>Description</label><br>
+			<textarea type="text" name="description" cols="60" rows="10" id="description" required> </textarea><br>
+			
+			<label>Quantity</label><br>
+			<input type="number" name="quantity" id="quantity" placeholder="Quantity in stock" required><br>
+			
+			<label>Shipping Price</label><br>
+			<input type="number" name="shippingValue" id="shippingValue" required><br>
+			
+			<label>Photo</label><br>
+			<input type="file" name="photo" id="photo" required><br>
+		</div>
+		<button type="submit" id="submitProduct" class="btn btn-default"> Submit</button>
+	</form>
+</div>
