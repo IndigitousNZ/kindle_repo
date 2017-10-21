@@ -1,5 +1,13 @@
 <div class="container">
 	<h3> Sign up </h3>
+	<ul>
+  <li><a href="#home"><span class="glyphicon glyphicon-home"></span><br>Home</a></li>
+  <li><a class="active" href="#news"><i class="fa fa-book" aria-hidden="true"></i><br>Devotion</a></li>
+  <li><a href="#contact"><span class="glyphicon glyphicon-grain"></span><br>Challenges</a></li>
+  <li><a href="#about"><i class="material-icons md-18">feedback</i><br>Feedback</a></li>
+  <li><a href="#about"><i class="material-icons md-18">forum</i><br>Forum</a></li>
+  <li><a href="#about"><i class="material-icons md-18">face</i><br>Login</a></li>
+</ul>
 	<form method="post" action="/users/signup">
 		<div class="signup">
 			<div>
@@ -17,6 +25,10 @@
 			<br>
 			<label>Email</label>
 			<input type="email" class="form-control" name="email" id="email" required>
+			<br>
+			<br>
+			<label>Church</label>
+			<input type="church" class="form-control" name="church" id="church" required>
 			<br>
 			<label>Password</label>
 			<sub> (Hey there! Make it at least 8 characters <- like numbers, characters, letters = semi hacker free) </sub><br>

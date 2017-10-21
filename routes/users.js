@@ -3,7 +3,7 @@ var router = express.Router();
 
 //Db connect
 var pg = require('pg');
-var connectionString = process.env.DATABASE_URL || 'postgres://plhoqthkotkzln:d7e741c35258ffecab67002f0f3a0464ee53c7cd0b74e1b862b75d2f961316ec@ec2-184-73-236-170.compute-1.amazonaws.com:5432/d6tutqc2i7u446';
+var connectionString = process.env.DATABASE_URL || 'postgres://localhost/dean';
 var client = new pg.Client(connectionString);
 client.connect();
 
@@ -32,12 +32,12 @@ router.post('/signup', function (req, res) {
     password: req.body.password,
     hash: bcrypt.hashSync(req.body.password, salt)
   } 
-  client.query('SELECT * FROM userstable WHERE email=($1);', [validUser.email], function(err, result) {
+  client.query('SELECT * FROM churchtable WHERE email=($1);', [validUser.email], function(err, result) {
     if(result.rows.length>0){
      res.render('signup', {taken: true}); 
    }
    else{
-      var call = "INSERT INTO userstable (id,firstname,lastname,email,password,administrator) VALUES ($1,$2,$3,$4,$5,$6)";
+      var call = "INSERT INTO churchtable (id,firstname,lastname,email,password,church) VALUES ($1,$2,$3,$4,$5,$6)";
       client.query(call, [validUser.id, validUser.firstname,validUser.lastname, validUser.email,validUser.hash,false], 
         function(error, result) {
           console.log("jo1 " + validUser);
