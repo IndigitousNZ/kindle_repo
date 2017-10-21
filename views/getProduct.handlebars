@@ -1,0 +1,95 @@
+<div id="productImage">
+    <div class="mdl-typography--text-center">
+        <div class="logo-font android-slogan" style="color: white; padding-top: 70px; padding-bottom: 70px; font-size: 8em;text-shadow: 2px 6px 50px black; ">
+            {{#if user.firstname}}
+            hi {{user.firstname}}
+            <br>
+            <div style="font-size: 0.3em;"">
+             have fun shopping
+            </div>
+            {{else}}
+              some shirts
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+<div id="portfolio" class="product">
+    <div class="container" style="padding-top: 50px;">
+        <div class="row">
+            {{# each items }}
+            <div class="col-sm-4 portfolio-item">
+                <a href="#{{ this.uniqueid }} " class="portfolio-link" data-toggle="modal">
+                    <div class="caption">
+                        <div class="caption-content" style="padding-left: 5px; padding-right: 5px;">
+                            <i class="fa fa-search-plus fa-3x"></i>
+                            <strong> {{ this.productname }} </strong>
+                            <br>
+                            <br>
+                            {{ this.description }}
+                        </div>
+                    </div>
+                    <img src="/{{ this.photofile }}" class="img-responsive" alt="Submarine">
+                </a>
+            </div>
+            {{else}}
+            <h2 style="color: #18BC9C;" align="center"> <strong>No items available!</strong></h2>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Modals -->
+{{# each items }}
+<div class="portfolio-modal modal fade" id="{{ this.uniqueid }}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal" style="margin-top: 40px;">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h5 style="color: #18BC9C;"> <strong>{{ this.productname }} </strong></h5>
+                        
+                        <img src="/{{ this.photofile }}" class="img-responsive img-centered" alt="" style="width:400px;height:450px;">
+
+                        <p> "{{ this.description }}" </p>
+                        <hr>
+                        <ul class="list-inline item-details">
+                            <li>Stock:
+                                <strong> {{ this.quantity }} remaining
+                                </strong>
+                            </li>
+                            <li>Price:
+                                <strong> ${{ this.price }} NZD
+                                </strong>
+                            </li>
+                            <li>Shipping:
+                                <strong> ${{ this.shippingvalue }} NZD
+                                </strong>
+                            </li>
+                            <br>
+                            <li>Style:
+                                <strong> {{ this.category }}
+                                </strong>
+                            </li>
+                            <li>For:
+                                <strong>  {{ this.gender }}
+                                </strong>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-default" style="margin-right: 20px;">Add to cart</button>
+                        
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}

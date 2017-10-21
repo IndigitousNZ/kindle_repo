@@ -1,0 +1,23 @@
+<div class="container">
+	<h3> Log in </h3>
+	<form method="post" action="/users/login">
+		<div class="form-group">
+			<div>
+				{{#if invalidEmail}}
+				<h5 style="color: red;">Email hasn't been registered, please sign up!</h5>
+				{{else if incorrectPassword}}
+				<h5 style="color: red;">Incorrect password, try again!</h5>
+				{{else}}
+				<h5>Start browsing new sturfz!!</h5>
+				{{/if}}
+			</div>
+			<label>Username</label>
+			<br>
+			<input type="email" class="form-control" name="email" id="email">
+			<label>Password</label>
+			<br>
+			<input type="password" class="form-control" name="password" id="password">
+		</div>
+		<button type="submit" id="submitLogIn" class="btn btn-default"> Submit</button>
+	</form>
+</div>

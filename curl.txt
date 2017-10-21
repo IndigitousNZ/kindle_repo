@@ -1,0 +1,5 @@
+curl -X GET https://murmuring-gorge-87692.herokuapp.com/
+
+curl -X GET https://murmuring-gorge-87692.herokuapp.com/signup
+
+curl -X GET https://murmuring-gorge-87692.herokuapp.com/products/search?task=Bulb
