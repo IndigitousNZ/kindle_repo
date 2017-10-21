@@ -20,13 +20,12 @@
     <ul>
         <li><a href="home.html"><span class="glyphicon glyphicon-home"></span><br>Home</a></li>
         <li><a href="DevotionPage.html"><i class="fa fa-book" aria-hidden="true"></i><br>Devotion</a></li>
-        <li><a href="#about"><span class="glyphicon glyphicon-grain"></span><br>Challenges</a></li>
+        <li><a href="#contact"><span class="glyphicon glyphicon-grain"></span><br>Challenges</a></li>
         <li><a class="active"><i class="material-icons md-18">feedback</i><br>Feedback</a></li>
         <li><a href="#about"><i class="material-icons md-18">forum</i><br>Forum</a></li>
         <li><a href="views/login.handlebars"><i class="material-icons md-18">face</i><br>Login</a></li>
     </ul>
 </div>
-
 <div class = "container">
     <div style="padding:20px;margin-top:30px;background-color:#1abc9c;height:1500px;">
         <section id="contact" class="content-section text-center">
@@ -38,15 +37,15 @@
                         <div class="col-md-8 col-md-offset-2">
                             <form class="form-horizontal">
                                 <div class="form-group">
-                                    <label for="exampleInputName2">Name</label>
+                                    <label for="feedback_name">Name</label>
                                     <input type="text" name="name" class="form-control" id="feedback_name" placeholder="Jane Doe [Optional]">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail2">Email</label>
+                                    <label for="feedback_email">Email</label>
                                     <input type="email" name="email" class="form-control" id="feedback_email" placeholder="jane.doe@example.com [Optional]">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputText">Your Message</label>
+                                    <label for="feedback_message">Your Message</label>
                                     <textarea name="message" class="form-control" id="feedback_message" required placeholder="Description e.g. changing structures, events, groups, interactional opportunities"></textarea>
                                 </div>
                                 <button type="button" class="btn btn-default" id="feedback_submit">Send Message</button>
@@ -54,17 +53,25 @@
                                     var name = document.getElementById('feedback_name').value;
                                     var email = document.getElementById('feedback_email').value;
                                     var message = document.getElementById('feedback_message').value;
-                                    var result = "";
+                                    var result = "<br>";
                                     if(name!==undefined){
                                         result+=name + "<br>";
                                     }
+                                    else{
+                                        result+="anonymous user" + "<br>";
+                                    }
                                     if(email!==undefined){
-                                        result+= email + "<br>";
+                                        result+=email + "<br>";
                                     }
                                     if(message!==undefined){
                                         result+=message +"<br>";
                                         var x = document.getElementById("recent_feedback");
-                                        x.innerHTML = String(result);
+                                        if($("#recent_feedback").text().trim()=="No current feedback"){
+                                            x.innerHTML = String(result);
+                                        }
+                                        else{
+                                            x.insertAdjacentHTML( 'beforeend', result );
+                                        }
                                         x.style.display = "block";
                                     }
                                     else{
