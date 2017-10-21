@@ -6,7 +6,7 @@
   "homepage": "http://startbootstrap.com/template-overviews/freelancer",
   "author": "Start Bootstrap",
   "scripts": {
-    "start": "node index.js"
+    "start": " index.js"
   },
   "license": {
     "type": "MIT",

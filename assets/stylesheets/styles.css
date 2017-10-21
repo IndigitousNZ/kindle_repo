@@ -14,7 +14,7 @@ a img{
 }
 
 ::selection {
-  background-color: grey;
+  background-color: #4CAF50;
   color: #fff;
 }
 
@@ -37,7 +37,7 @@ a img{
   right: 20%;
   bottom: -26px;
   z-index: 3;
-  background: #18BC9C !important;
+  background: #4CAF50 !important;
   color: black !important;
 }
 

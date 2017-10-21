@@ -7,8 +7,8 @@
     <meta name="description" content="whatever. the best shirt shop!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="author" content="group 10">
-    <link rel="icon" type="image/png" href="/assets/images/companyLogo.png" >
-    <title>whatever.</title>
+    
+    
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -18,7 +18,7 @@
     <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="/assets/stylesheets/freelancer.min.css" rel="stylesheet">
+    <link href="/assets/stylesheets/DevotionPage.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -30,36 +30,8 @@
 </head>
 
 <div id="page-top" class="index">
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
-            <div class="mdl-layout__header-row">
-                <span class="android-title mdl-layout-title" style="color: black;">
-                    <a href="/">whatever.</a>
-                </span>
-                <div class="android-header-spacer mdl-layout-spacer"></div>
-                <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width"
-                id="searchField">
-                <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
-                    <i class="material-icons">search</i>
-                </label> 
-                <div class="mdl-textfield__expandable-holder">
-                    <form id="search" method="get" action="" role="search">
-                        <input class="mdl-textfield__input" type="search" id="search-field" onsearch="handleSearch()">
-                            <script>
-                                function handleSearch() {
-                                    window.location.href = 'https://murmuring-gorge-87692.herokuapp.com/products/search?task=' + $('#search-field').val();
-                                }
-                            </script>
-                    </form>
-                </div>
-            </div>
-            <!-- Navigation -->
-            <span class="android-mobile-title mdl-layout-title" style="color: #18BC9C;">
-                whatever.
-            </span>
-            <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
-                <i class="material-icons">more_vert</i>
-            </button>
+    
+          
             <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
                 {{#if user.id}}
                 <li> 

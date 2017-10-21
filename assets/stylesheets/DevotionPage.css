@@ -1,0 +1,40 @@
+body {
+    margin:0;
+    font-family: 'Lato', sans-serif;
+     background-color: #1abc9c;
+}
+
+ul {
+    list-style-type: none;
+    margin: 10;
+    padding: 0;
+    overflow: hidden;
+    background-color: #322;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+

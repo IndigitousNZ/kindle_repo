@@ -8,7 +8,7 @@ var multer = require('multer');
 
 // Connect DB to service
 var pg = require('pg');
-var connectionString = process.env.DATABASE_URL || 'postgres://plhoqthkotkzln:d7e741c35258ffecab67002f0f3a0464ee53c7cd0b74e1b862b75d2f961316ec@ec2-184-73-236-170.compute-1.amazonaws.com:5432/d6tutqc2i7u446';
+var connectionString = process.env.DATABASE_URL || 'postgres://localhost/dean';
 var client = new pg.Client(connectionString);
 client.connect();
 
