@@ -6,51 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="DevotionPage.css">
     <link rel="stylesheet" href="home.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <script src="https://use.fontawesome.com/8a37be9573.js"></script>
 </head>
 <body>
 
 <ul>
-    <li><a class="active" href="#home">Home</a></li>
-    <li><a href="#news">Devotion</a></li>
-    <li><a href="#contact">Challenges</a></li>
-    <li><a href="#about">Feedback</a></li>
-    <li><a href="#about">Forum</a></li>
-    <li><a href="#about">Login</a></li>
+    <li><a class="active" href="home.html"><span class="glyphicon glyphicon-home"></span><br>Home</a></li>
+    <li><a href="DevotionPage.html"><i class="fa fa-book" aria-hidden="true"></i><br>Devotion</a></li>
+    <li><a href="#about"><span class="glyphicon glyphicon-grain"></span><br>Challenges</a></li>
+    <li><a href="feedback.html"><i class="material-icons md-18">feedback</i><br>Feedback</a></li>
+    <li><a href="#about"><i class="material-icons md-18">forum</i><br>Forum</a></li>
+    <li><a href="#about"><i class="material-icons md-18">face</i><br>Login</a></li>
 </ul>
 
-<div style="padding:20px;margin-top:30px;background-color:#1abc9c;height:1500px;">
-    <div class="panel panel-default">
-        <div class="panel-body home_block">
-            <blockquote>And let us consider how we may spur one another on toward love and good deeds
-            <footer>Hebrews 10:24</footer>
-            </blockquote>
-        </div>
-    </div>
-    <div id="home_devotion">
-        <h3>1.1: Segment Rhythm - Why</h3>
+
+<div class = "container">
+    <div style="padding:20px;margin-top:30px;background-color:#1abc9c;height:1500px;">
         <div class="panel panel-default">
             <div class="panel-body home_block">
-                <p>The beginning lesson of the 6 week devotion study. Introduces members to building redemptive relationships
-                    between their church friends and non-Christian friends.</p>
+                <blockquote id="home_verse">And let us consider how we may spur one another on toward love and good deeds.
+                <footer>Hebrews 10:24</footer>
+                </blockquote>
             </div>
         </div>
-    </div>
-    <div id="home_forum">
-        <h3>Q: Any tips on how to start putting the devotion into practise?</h3>
-        <div class="panel panel-default">
-            <div class="panel-body home_block">
-                <p>A: [Kindle user] Working through the challenges each day is a great way to start. Even if you don't get
-                    through all of them. </p>
+        <div id="home_devotion">
+            <h3>1.1: Segment Rhythm - Why</h3>
+            <div class="panel panel-default">
+                <div class="panel-body home_block">
+                    <h4>The beginning lesson of the 6 week devotion study. Introduces members to building redemptive
+                        relationships between their church friends and non-Christian friends.</h4>
+                </div>
+            </div>
+        </div>
+        <div id="home_forum">
+            <h3>Q: Any tips on how to start putting the devotion into practise?</h3>
+            <div class="panel panel-default">
+                <div class="panel-body home_block">
+                    <h4>A: [Kindle user] Working through the challenges each day is a great way to start. Even if you
+                        don't get through all of them. </h4>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 </body>
 
 </html>
