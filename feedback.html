@@ -16,15 +16,16 @@
     <script src="https://use.fontawesome.com/8a37be9573.js"></script>
 </head>
 <body>
-
-<ul>
-    <li><a href="home.html"><span class="glyphicon glyphicon-home"></span><br>Home</a></li>
-    <li><a href="DevotionPage.html"><i class="fa fa-book" aria-hidden="true"></i><br>Devotion</a></li>
-    <li><a href="#about"><span class="glyphicon glyphicon-grain"></span><br>Challenges</a></li>
-    <li><a class="active"><i class="material-icons md-18">feedback</i><br>Feedback</a></li>
-    <li><a href="#about"><i class="material-icons md-18">forum</i><br>Forum</a></li>
-    <li><a href="#about"><i class="material-icons md-18">face</i><br>Login</a></li>
-</ul>
+<div class="w3-container" id="navcon">
+    <ul>
+        <li><a href="home.html"><span class="glyphicon glyphicon-home"></span><br>Home</a></li>
+        <li><a href="DevotionPage.html"><i class="fa fa-book" aria-hidden="true"></i><br>Devotion</a></li>
+        <li><a href="#about"><span class="glyphicon glyphicon-grain"></span><br>Challenges</a></li>
+        <li><a class="active"><i class="material-icons md-18">feedback</i><br>Feedback</a></li>
+        <li><a href="#about"><i class="material-icons md-18">forum</i><br>Forum</a></li>
+        <li><a href="views/login.handlebars"><i class="material-icons md-18">face</i><br>Login</a></li>
+    </ul>
+</div>
 
 <div class = "container">
     <div style="padding:20px;margin-top:30px;background-color:#1abc9c;height:1500px;">
@@ -38,32 +39,37 @@
                             <form class="form-horizontal">
                                 <div class="form-group">
                                     <label for="exampleInputName2">Name</label>
-                                    <input type="text" class="form-control" id="feedback_name" placeholder="Jane Doe [Optional]">
+                                    <input type="text" name="name" class="form-control" id="feedback_name" placeholder="Jane Doe [Optional]">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail2">Email</label>
-                                    <input type="email" class="form-control" id="feedback_email" placeholder="jane.doe@example.com [Optional]">
+                                    <input type="email" name="email" class="form-control" id="feedback_email" placeholder="jane.doe@example.com [Optional]">
                                 </div>
-                                <div class="form-group" id="feedback_message">
+                                <div class="form-group">
                                     <label for="exampleInputText">Your Message</label>
-                                    <textarea class="form-control" required placeholder="Description e.g. changing structures, events, groups, interactional opportunities"></textarea>
+                                    <textarea name="message" class="form-control" id="feedback_message" required placeholder="Description e.g. changing structures, events, groups, interactional opportunities"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-default" id="feedback_submit">Send Message</button>
+                                <button type="button" class="btn btn-default" id="feedback_submit">Send Message</button>
                                 <script>$('#feedback_submit').on('click', function (e) {
                                     var name = document.getElementById('feedback_name').value;
                                     var email = document.getElementById('feedback_email').value;
                                     var message = document.getElementById('feedback_message').value;
-                                    var result;
-                                    if(name!=null){
+                                    var result = "";
+                                    if(name!==undefined){
                                         result+=name + "<br>";
                                     }
-                                    if(email!=null){
+                                    if(email!==undefined){
                                         result+= email + "<br>";
                                     }
-                                    result+=message;
-                                    //window.alert(result);
-                                    var x = document.getElementById("recent_feedback");
-                                    document.getElementById("recent_feedback").innerHTML = result;
+                                    if(message!==undefined){
+                                        result+=message +"<br>";
+                                        var x = document.getElementById("recent_feedback");
+                                        x.innerHTML = String(result);
+                                        x.style.display = "block";
+                                    }
+                                    else{
+                                        alert("No message found. Please try again.");
+                                    }
                                 })</script>
                             </form>
                         </div>
@@ -71,22 +77,24 @@
                 </div>
             </div>
         </section>
-
-        <script>
-            function myFunction() {
-                var x = document.getElementById("view_feedback");
-                if (x.style.display === "none") {
-                x.style.display = "block";
-                } else {
-                x.style.display = "none";
+        <section>
+            <script>
+                function toggleFeedbackView() {
+                    var x = document.getElementById("recent_feedback");
+                    if (x.style.display === "none") {
+                    x.style.display = "block";
+                    } else {
+                    x.style.display = "none";
+                    }
                 }
-            }
-        </script>
-        <div>
-            <button type="button" class="btn btn-default" id="view_feedback">View Feedback</button>
-            <div id="recent_feedback">
+            </script>
+            <div>
+                <button type="button" class="btn btn-default" id="view_feedback" onclick="toggleFeedbackView()">View Feedback</button>
+                <div id="recent_feedback" style="display: none">
+                    <p>No current feedback</p>
+                </div>
             </div>
-        </div>
+        </section>
     </div>
 </div>
 </body>

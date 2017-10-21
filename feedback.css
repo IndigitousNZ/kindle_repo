@@ -6,7 +6,6 @@
 body{
     width:100%;
     height:100%;
-    /*overflow: hidden;*/
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -41,8 +40,4 @@ a:hover,a:focus{
 
 textarea.form-control{
     height:100px;
-}
-
-#view_feedback{
-    display: none;
 }
